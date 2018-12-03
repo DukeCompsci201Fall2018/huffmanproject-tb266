@@ -1,4 +1,23 @@
-bin
-*.class
+# Eclipse
+.classpath
+.project
+.settings/
 
+# Intellij
+.idea/
+*.idea
+gen/
+classes/
+out/
+build
+*build
+*.iml
+*.ipr
+*.iws
 
+# Mac
+.DS_Store
+
+# Maven
+log/
+target/
