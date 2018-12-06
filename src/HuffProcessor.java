@@ -131,8 +131,13 @@ public class HuffProcessor {
 
 		while (true){
 			int val = in.readBits(BITS_PER_WORD);
-			if (val == -1) break;
-			String code = codings[val];
+			String code = "";
+			if (val == -1){
+				code = codings[PSEUDO_EOF];
+				out.writeBits(code.length(), Integer.parseInt(code,2));
+				break;
+			}
+			code = codings[val];
 			out.writeBits(code.length(), Integer.parseInt(code,2));
 		}
 	}
